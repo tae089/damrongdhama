@@ -14,6 +14,7 @@
   $this->title = 'Col Requests';
   $this->params['breadcrumbs'][] = $this->title;
   ?>
+
   <div class="col-request-index">
 
 
@@ -23,10 +24,11 @@
       'rowOptions'=>function($model){
           $ndate = date('Y-m-d',$model->req_date->sec);
           $ndate1 = date('Y-m-d',$model->req_report_dates->sec);
+          
           if(date('Y-m-d', strtotime($ndate. ' +3 day')) <=  date('Y-m-d') && ($model->req_status!="ยุติเรื่อง" && $model->req_report_date1 ==''&& $model->req_status!="รายงาน")){
-              return ['class' => 'danger'];
-          }else if($ndate1 >= date('Y-m-d') && $model->req_send_date==''){
-               return ['class' => 'info'];
+              return ['class' => 'bg-red'];
+          }else if(date('Y-m-d') >= $ndate1 && $model->req_send_date=='' && $model->req_report_dates!='' && ($model->req_status!="รายงาน" && $model->req_status!="ยุติเรื่อง")){
+               return ['class' => 'bg-yellow'];
           }else{
               return [];
           }
