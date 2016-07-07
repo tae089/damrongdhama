@@ -51,6 +51,10 @@ return [
      * Lists all ColRequest models.
      * @return mixed
      */
+      public function actionIest()
+    {
+        $ddd="";
+    }
     public function actionIndex()
     {
         $searchModel = new ColRequestSearch();
