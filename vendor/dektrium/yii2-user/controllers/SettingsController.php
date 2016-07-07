@@ -151,11 +151,12 @@ class SettingsController extends Controller
 
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $event);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             //===================================================
                 $img = $model->photo;
                 if(UploadedFile::getInstance($model, 'file')&&$model->file){  if (!unlink($img)) ;  }
                $model->file = UploadedFile::getInstance($model, 'file');
-               var_dump($model->file);
+               var_dump($model->file); 
                 $save_file = '';
                 if($model->file){
                     $imagepath = 'photos/';

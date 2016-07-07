@@ -1,5 +1,5 @@
 <?php
-// หหหห
+//goo
 namespace app\controllers;
 
 use Yii;

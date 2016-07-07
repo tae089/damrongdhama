@@ -69,6 +69,7 @@ $config = [
         ],
          'gii1' => [
             'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*'],
             'generators' => [
                 'mongoDbModel' => [
                     'class' => 'yii\mongodb\gii\model\Generator'
